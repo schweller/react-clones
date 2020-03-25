@@ -6,5 +6,7 @@
 
 <div style="clear:both"></div>
 
-## **Clones so far**
-1. [Trello](/trello/)
+
+# Clones Index 
+
+## Trello Clone | <a href="trello/client">View Client</a>
