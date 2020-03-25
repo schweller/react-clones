@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Icon from '../Icon'
+import Logo from './Logo'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrello } from '@fortawesome/free-brands-svg-icons'
@@ -24,7 +25,9 @@ function TopNav() {
           <Label>Boards</Label>
         </LinkItem>
       </LeftContainer>
-      <Logo>Logo</Logo>
+      <LogoWrapper>
+        <Logo/>
+      </LogoWrapper>
       <RightContainer>
         <LinkItem>
           <Icon icon={bellIcon}/> 
@@ -68,9 +71,11 @@ const LeftContainer = styled.div`
   flex: 1;
 `
 
-const Logo = styled.div`
+const LogoWrapper = styled.div`
   display: flex;
   flex: 1;
+  justify-content: center;
+  opacity: .5;
 `
 
 const RightContainer = styled.div`
