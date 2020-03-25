@@ -18,7 +18,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "types": ["node", "jest"]
+    "types": ["node", "jest"],
+    "baseUrl": "src"
   },
   "include": [
     "./**/*"

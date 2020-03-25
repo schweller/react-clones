@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import BoardsList from './BoardsList'
 import Icon from '../shared/components/Icon'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +11,7 @@ import { faBorderStyle } from '@fortawesome/free-solid-svg-icons'
 const trelloIcon = <FontAwesomeIcon icon={faTrello} style={{width: "14px", height: "14px"}} />
 const modelsIcon = <FontAwesomeIcon icon={faBorderStyle} style={{width: "14px", height: "14px"}} />
 
-const Dashboard = () => {
+const Boards = () => {
   return (
     <Container>
       <StickyContainer>
@@ -32,19 +33,7 @@ const Dashboard = () => {
             </ul>
           </StickyInnerContainer>
         </StickyLeftNavigation>
-        <AllBoards>
-          <div>
-            <ListHeading>Personal boards</ListHeading>
-            <BoardList>
-              <BoardItem>
-                <BoardLink href="#">Welcome</BoardLink>
-              </BoardItem>
-              <BoardItem>
-                <BoardLink href="#">Sample Board</BoardLink>
-              </BoardItem>                
-            </BoardList>
-          </div>
-        </AllBoards>
+        <BoardsList />
       </StickyContainer>
     </Container>
   )
@@ -52,38 +41,6 @@ const Dashboard = () => {
 
 const Label = styled.div`
   padding-right: 8px;
-`
-
-const ListHeading = styled.h3`
-  margin-bottom: 15px;
-`
-
-const BoardList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-`
-
-const BoardItem = styled.li`
-  width: 23.5%;
-  padding: 0;
-  margin: 0 2% 2% 0;
-  transform: translate(0);
-  background-color: #026aa7;
-  border-radius: 3px;
-  height: 96px;
-  padding: 8px;
-  > a {
-    color: white;
-    text-decoration: none;
-  }
-`
-
-const BoardLink = styled.a`
-  display: block;
-  height: 96px;
 `
 
 const Link = styled.a<{active?: boolean}>`
@@ -132,11 +89,4 @@ const MenuItem = styled.li`
   margin-bottom: 4px;
 `
 
-const AllBoards = styled.div`
-  margin: 40px 16px 0;
-  width: 100%;
-  max-width: 825px;
-  min-width: 288px;
-`
-
-export default Dashboard
+export default Boards

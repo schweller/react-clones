@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import { createBrowserHistory } from 'history'
-import Boards from '../Boards'
+import Boards from 'Boards'
 
 const history = createBrowserHistory()
 
