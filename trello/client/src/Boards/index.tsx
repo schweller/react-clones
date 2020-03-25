@@ -1,6 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Icon from '../shared/components/Icon'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrello } from '@fortawesome/free-brands-svg-icons'
+import { faBorderStyle } from '@fortawesome/free-solid-svg-icons'
+
+const trelloIcon = <FontAwesomeIcon icon={faTrello} style={{width: "14px", height: "14px"}} />
+const modelsIcon = <FontAwesomeIcon icon={faBorderStyle} style={{width: "14px", height: "14px"}} />
+
 const Dashboard = () => {
   return (
     <Container>
@@ -9,13 +18,16 @@ const Dashboard = () => {
           <StickyInnerContainer>
             <ul>
               <MenuItem>
-                <Link href="#" active>Boards</Link>
+                <Link href="#" active>
+                  <Icon icon={trelloIcon} height="20px" />
+                  <Label>Boards</Label>
+                </Link>
               </MenuItem>
               <MenuItem>
-                <Link href="#">Models</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link href="#">Start</Link>
+                <Link href="#">
+                  <Icon icon={modelsIcon} height="20px" />
+                  <Label>Models</Label>
+                </Link>
               </MenuItem>
             </ul>
           </StickyInnerContainer>
@@ -38,9 +50,9 @@ const Dashboard = () => {
   )
 }
 
-type Active = {
-  active?: boolean
-}
+const Label = styled.div`
+  padding-right: 8px;
+`
 
 const ListHeading = styled.h3`
   margin-bottom: 15px;
@@ -74,15 +86,16 @@ const BoardLink = styled.a`
   height: 96px;
 `
 
-const Link = styled.a<Active>`
+const Link = styled.a<{active?: boolean}>`
+  display: flex;
+  align-items: center;
   background-color: ${props => props.active ? "#e4f0f6" : "white"};
   color: ${props => props.active ? "#0079bf" : "black"};
-  display: flex;
-  padding: 6px 8px 6px 8px;
+  padding: 6px 0 6px 0;
   border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
   ${props => props.active ? 
     `` : 
     `
